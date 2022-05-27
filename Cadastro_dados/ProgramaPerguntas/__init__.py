@@ -25,6 +25,9 @@ for pk, pv in perguntas.items(): # pk = perguntas keys, pv = perguntas values
     print()
     sleep(1)
     resposta_usuario = input('Digite a opção desejada(A, B ou C): ')
+    for resp in resposta_usuario:
+        if resposta_usuario != str:
+            print('digite somente A, B ou C')
 
     if resposta_usuario == pv['resposta_certa']:
         print('Você acertou!!')
@@ -33,3 +36,8 @@ for pk, pv in perguntas.items(): # pk = perguntas keys, pv = perguntas values
         print('Você errou!!')
     print()
     sleep(1.5)
+
+qntd_perguntas = len(perguntas)
+porcentagem_acerto = respostas_certas / qntd_perguntas * 100
+print(f'Voce acertou {respostas_certas} respostas')
+print(f'Sua porcentagem de acertos foi de {porcentagem_acerto}')
