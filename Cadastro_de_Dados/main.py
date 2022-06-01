@@ -15,6 +15,9 @@ while True:
         menu_header('NOVO CADASTRO')
         name = user_name('Nome: ')
         age = user_age('Idade: ')
+        sleep(1)
+        print('Use as letras M(MASCUINO), F(FEMININO), O(OUTRO)')
+        gender = user_gender('Gênero: ')
         #abre os dados para ser cadastrados
     elif option_menu == 3:
         print('222')        

@@ -1,8 +1,14 @@
+from time import sleep
+from string import ascii_letters
+
+
 def user_name(msg_name):
+    validos = ascii_letters
     while True:
-        name_user = str(input(msg_name)).strip()
-        if name_user == '':
-            print('\033[31mErro: por favor, digite algum valor para o nome de usuário, seja numeros ou palavras.\033m')
+        name_user = input(msg_name).upper()
+        if not all(letra in validos for letra in name_user):
+            print('\033[31Erro: Por favor, digite somente letras e espaços, sem números ou caracteres especiais.')
+            continue
         else:
             return name_user
 
@@ -16,7 +22,22 @@ def user_age(msg_age):
             continue
         else:
             return age_user
-    
+
+
+def user_gender(msg_gender):
+    while True:
+        gender_user = str(input(msg_gender)).upper().strip()
+        if not gender_user in 'MFO':
+            print('Digite somente as letras M(MASCULINO), F(FEMININO) ou O(OUTRO).')
+            continue
+        if gender_user == 'O':
+            print('No campo abaixo digite o gênero que se identifica.')
+            sleep(1)
+            gender_user = str(input(msg_gender))
+            return gender_user
+        else:
+            return gender_user
+
 
 def menu_header(txt):
     print('-'*42)
