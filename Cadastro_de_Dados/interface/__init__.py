@@ -3,10 +3,10 @@ from string import ascii_letters
 
 
 def user_name(msg_name):
-    validos = ascii_letters
+    valid = ascii_letters
     while True:
         name_user = input(msg_name).upper()
-        if not all(letra in validos for letra in name_user):
+        if not all(letter in valid for letter in name_user):
             print('\033[31Erro: Por favor, digite somente letras e espaços, sem números ou caracteres especiais.')
             continue
         else:
