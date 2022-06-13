@@ -30,7 +30,6 @@ def read_file(txt):
         menu_header('PESSOAS CADASTRAS')
         for line in read:
             personal_data = line.split(';')
-            personal_data[0] = personal_data[0].replace('\n', '')
             print(f'{personal_data[0].center(42)}')
     finally:
         read.close()
@@ -53,11 +52,7 @@ def register_user(datafile, name='undefined', age=0, gender='undefined'):
 
 def complete_data(data):
     data_user = open(data, 'rt')
+    #search_user = str('Digite o nome da pessoa para saber os dados completos: ')
     for line in data_user:
-            personal_data = line.split(';')
-            personal_data[1] = personal_data[1].replace('\n', '')
-            print(f'{personal_data[0]:<30}{personal_data[2].center(42)}{personal_data[1]:>3}')
-
-
-#DEF PARA MOSTRAR EM UMA LISTA NUMERADA TODOS OS USUARIOS CADASTRADOS
-#ASSIM DANDO A OPÇÃO PARA VER OS DADOS COMPLETOS DE UM USER ESPECIFICO
+        search_user = line.split(';')
+        print(f'{search_user[0].center(42)}{search_user[1]}{search_user[2]}')

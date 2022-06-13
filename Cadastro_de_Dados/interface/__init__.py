@@ -2,6 +2,8 @@ from time import sleep
 from string import ascii_letters
 
 
+
+
 def user_name(msg_name):
     valid = ascii_letters
     while True:
@@ -67,4 +69,9 @@ def user_value(msg_value): # SEPARA USER_AGE EM OUTRA FUNÇÃO E VOLTAR SOMENTE 
             return 0 
         else:
             return choise_user
+    
+
+
+    
+
     
