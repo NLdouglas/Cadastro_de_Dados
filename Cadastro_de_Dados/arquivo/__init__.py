@@ -52,7 +52,11 @@ def register_user(datafile, name='undefined', age=0, gender='undefined'):
 
 def complete_data(data):
     data_user = open(data, 'rt')
-    #search_user = str('Digite o nome da pessoa para saber os dados completos: ')
+    list_user = list()
     for line in data_user:
         search_user = line.split(';')
-        print(f'{search_user[0].center(42)}{search_user[1]}{search_user[2]}')
+        list_user.append(search_user[0])
+    search_user = str(input(data)).upper().strip()
+    if search_user == list_user:
+        print(f'{search_user[0]}{search_user[1]}{search_user[2]}')
+        

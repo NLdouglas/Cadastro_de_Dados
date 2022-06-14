@@ -20,11 +20,7 @@ while True:
         gender = user_gender('Gênero: ')
         register_user(datafile, name, age, gender)
     elif option_menu == 3:
-        complete_data(datafile)  #mostra os dados completos
-        #mostrar cada pessoa cadastrada com sua numeração
-        # dando a opçao do usuario escolher algum numero assim 
-        # apresentando os dados completos do usuario selecionado      
-        
+        complete_user = complete_data('Digite o nome da pessoa para saber os dados completos: ')  
     elif option_menu == 4:
         print('fim')
         break
