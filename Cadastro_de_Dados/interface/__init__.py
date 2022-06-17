@@ -35,7 +35,7 @@ def user_gender(msg_gender):
         if gender_user == 'O':
             print('No campo abaixo digite o gênero que se identifica.')
             sleep(1)
-            gender_user = str(input(msg_gender))
+            gender_user = str(input(msg_gender)).upper().strip()
             return gender_user
         else:
             return gender_user
