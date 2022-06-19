@@ -5,11 +5,11 @@ from string import ascii_letters
 
 
 def user_name(msg_name):
-    valid = ascii_letters
+    valid = ascii_letters 
     while True:
-        name_user = input(msg_name).upper()
+        name_user = input(msg_name).upper().strip()
         if not all(letter in valid for letter in name_user):
-            print('\033[31Erro: Por favor, digite somente letras e espaços, sem números ou caracteres especiais.')
+            print('\033[31Erro: Por favor, digite somente o primeiro NOME    e não utilize espaços, números ou caracteres especiais.')
             continue
         else:
             return name_user

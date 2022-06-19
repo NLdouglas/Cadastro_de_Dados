@@ -50,17 +50,16 @@ def register_user(datafile, name='undefined', age=0, gender='undefined'):
             add_record.close()
 
 
-def complete_data(data, datafile):
-    data_user = open(datafile, 'rt')
-    list_user = list()
-    for line in data_user:
-        search_user = line.split(';')
-        list_user.append(search_user[0])
-    while True:
-        complete_user = str(input(data)).upper().split()
-        if not complete_user in list_user:
-            print('Está pessoa não cadastrada, selecione a opção de numero 1 para ver as pessoas cadastradas')
-            continue
-        if complete_user[0] in list_user:
-            print(f'{search_user[0]}{search_user[1]}{search_user[2]}')
+def complete_data(data):
+    try:
+        read = open(data, 'rt')
+    except:
+        print('Erro ao ler arquivo')
+    else:
+        menu_header('DADOS COMPLETOS')
+        for line in read:
+            personal_data = line.split(';')
+            print(f'{personal_data[0]} - {personal_data[1]} - {personal_data[2]}')
+    finally:
+        read.close()
         
